@@ -1,0 +1,21 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+#root{
+      border: 2px solid black;
+    height: 400px;
+    width: 400px;
+    
+}
+button{
+    height: 40px;
+    width: 90px;
+    background-color: blue;
+    color: aliceblue;
+    gap: 20px;
+    
+    
+    font-size: 10px;
+    
+}

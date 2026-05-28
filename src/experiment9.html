@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Registration Form</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f2f2f2;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .container {
+      background: #fff;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+      width: 350px;
+      text-align: center;
+    }
+
+    h2 {
+      margin-bottom: 20px;
+    }
+
+    input {
+      width: 90%;
+      padding: 10px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+    }
+
+    button {
+      background: green;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+
+    button:hover {
+      background: darkgreen;
+    }
+
+    .success {
+      color: green;
+      margin-top: 15px;
+      font-weight: bold;
+      display: none;
+    }
+
+    .users {
+      margin-top: 20px;
+      background: #e6f2e6;
+      padding: 15px;
+      border-radius: 5px;
+      text-align: left;
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h2>Registration Form</h2>
+
+  <input type="text" id="name" placeholder="Enter Name">
+  <input type="email" id="email" placeholder="Enter Email">
+  <input type="password" id="password" placeholder="Enter Password">
+
+  <button onclick="registerUser()">Register</button>
+
+  <div class="success" id="successMsg">Registration Successful!</div>
+
+  <div class="users">
+    <h3>Registered Users</h3>
+    <ul id="userList"></ul>
+  </div>
+</div>
+
+<script>
+  function registerUser() {
+    let name = document.getElementById("name").value;
+    let email = document.getElementById("email").value;
+
+    if (name === "" || email === "") {
+      alert("Please fill all fields!");
+      return;
+    }
+
+    let list = document.getElementById("userList");
+
+    let li = document.createElement("li");
+    li.textContent = name + " - " + email;
+
+    list.appendChild(li);
+
+    document.getElementById("successMsg").style.display = "block";
+
+    // Clear inputs
+    document.getElementById("name").value = "";
+    document.getElementById("email").value = "";
+    document.getElementById("password").value = "";
+  }
+</script>
+
+</body>
+</html>
